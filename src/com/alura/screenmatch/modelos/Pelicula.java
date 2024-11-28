@@ -5,6 +5,11 @@ import com.alura.screenmatch.calculos.Clasificable;
 public class Pelicula extends Titulo implements Clasificable {
     private String director;
 
+    //Heredamos de titulo el constructor
+    public Pelicula(String nombre, int fechaDeLanzamiento) {
+        super(nombre, fechaDeLanzamiento);
+    }
+
     public String getDirector() {
         return director;
     }
@@ -15,6 +20,15 @@ public class Pelicula extends Titulo implements Clasificable {
 
     @Override
     public int getClasificacion() {
+
         return (int) calculaMediaEvaluaciones() / 2;
     }
+
+    @Override
+    public String toString() {
+        return "Pelicula: " + this.getNombre() + " (" + getFechaDeLanzamiento()+ ")" ;
+    }
+
+
+
 }
